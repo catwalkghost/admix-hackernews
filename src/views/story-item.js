@@ -15,7 +15,24 @@ export const StoryItem = ({storyId}) => {
                 data && u.isValidUrl(data.url) && setStory(data))
     }, [storyId])
 
-    return (
-    <p>{JSON.stringify(story)}</p>
-    )
+    const {by, score, title, time, kids, url} = story
+    const commentsCount = f.size(kids)
+
+    return f.isObject(story) && u.isValidUrl(url) ?
+        (
+            <div
+                style={{
+                    'display': 'flex',
+                    'flex-direction': 'row',
+                    'alignItems' : 'center',
+                    'justifyContent' : 'center',
+                    'padding': '1rem' }}>
+                <span>{by} | </span>
+                <span>{title} | </span>
+                <span>{score} | </span>
+                <span>{time} | </span>
+                <span>{commentsCount} | </span>
+                <a href={url}><span>{url}</span></a>
+            </div>
+        ) : null
 }
