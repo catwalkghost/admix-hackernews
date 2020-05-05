@@ -23,7 +23,7 @@ export const StoryItem = ({storyId}) => {
             <div
                 style={{
                     'display': 'flex',
-                    'flex-direction': 'row',
+                    'flexDirection': 'row',
                     'alignItems' : 'center',
                     'justifyContent' : 'center',
                     'padding': '1rem' }}>

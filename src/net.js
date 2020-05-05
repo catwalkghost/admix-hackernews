@@ -1,4 +1,7 @@
 import axios from 'axios'
+import * as f from 'fpx'
+
+import * as u from './utils'
 
 export const baseUrl = 'https://hacker-news.firebaseio.com/v0/'
 export const topStoriesUrl = `${baseUrl}topstories.json`
@@ -11,7 +14,18 @@ export const getStories = async () => {
             // Getting New Stories
             .get(newStoriesUrl)
             // Once data is fetched, return it
-            .then(({data}) => data)
+            .then(({data}) => f.isObject(data) && data)
+
+    return result
+}
+
+export const getStoriesFields = async () => {
+    const result =
+        await axios
+            // Getting New Stories
+            .get(newStoriesUrl)
+            // Once data is fetched, return it
+            .then(({data}) => f.isObject(data) && u.selectFields(data))
 
     return result
 }
