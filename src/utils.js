@@ -21,4 +21,3 @@ export const selectFields = ({by, score, title, time, kids, url} = {}) => ({
     url,
 })
 
-// Convert Timestamps to a human-readable format
