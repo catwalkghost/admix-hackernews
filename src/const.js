@@ -28,7 +28,7 @@ export const COLUMNS = [
         title: 'Time',
         dataIndex: 'time',
         key: 'time',
-        render: time => f.isNumber(time) ? u.convertTimestamp(time) : 'n/a'
+        render: time => f.isNumber(time) ? u.convertTimestamp(time) : 'n/a',
     },
     {
         title: 'Comments Count',

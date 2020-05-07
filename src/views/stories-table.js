@@ -5,23 +5,25 @@ import * as ant from 'antd'
 import * as f from 'fpx'
 
 import * as n from '../net'
-
 import * as u from '../utils'
 import * as c from '../const'
 
-import * as si from './story-item'
 
 export const StoriesTable = () => {
-    const [stories, setStories] = useState([] ) // Stories come as an array. Setting an empty array
+    // Stories come as an array. Setting an empty array
+    const [stories, setStories] = useState([] )
 
     React.useEffect(() => {
         n.fetchTopStories()
-            // Resolving the promise and populating post
+            // Resolving the promise and populating stories
             .then(stories => setStories(stories))
             .catch(err => console.log(`Error: ${err}`))
     }, []);
 
     return (
-        <ant.Table dataSource={stories} columns={c.COLUMNS}/>
+        <ant.Table
+            dataSource={stories}
+            columns={c.COLUMNS}
+            pagination={{ defaultPageSize: 5}}/>
     )
 }
