@@ -1,6 +1,7 @@
 import React from 'react'
 
 import * as f from 'fpx'
+import * as c from "./const";
 
 // using REGEX to check whether a URL is valid. This can be handy for forms too!
 export const URL_REGEX = /^(?:(\w+:)[/][/])(?:[^,;!?/#\s]+[.][^,;!?/#\s]+)(?:[^,;!?#\s]*)(?:[?][^,;!#\s]*)?(?:#[^,;!\s]*)?$/
@@ -10,6 +11,9 @@ export const URL_REGEX = /^(?:(\w+:)[/][/])(?:[^,;!?/#\s]+[.][^,;!?/#\s]+)(?:[^,
 export const isValidUrl = (value) =>
     f.isString(value) && URL_REGEX.test(value)
 
+// Set a limit on the amount of stories
+export const maxStories = (list) =>
+    f.isList(list) && f.slice(list, 0, c.MAX_STORIES)
 
 // Fields selector, defaults to an empty object
 export const selectFields = ({by, score, title, time, kids, url} = {}) => ({

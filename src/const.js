@@ -8,6 +8,8 @@ export const NEW_STORIES = `${BASE_URL}newstories.json`
 export const STORY = `${BASE_URL}item/`
 export const PRETTY = '?print=pretty'
 
+export const MAX_STORIES = 15
+
 export const COLUMNS = [
     {
         title: 'Author',

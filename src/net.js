@@ -41,37 +41,28 @@ export const fetchTopStories = async () => {
             throw new Error(`Error: ${response.text}`)
         }
 
+        // json() method returns a promise
         const data = await response.json()
-        // Displaying only 100 stories
-        const shortList = f.slice(data, 0, 15)
+        // Displaying only 15 stories as shown in mock-up
+        // const shortList = f.slice(data, 0, c.MAX_STORIES)
+        const shortList = u.maxStories(data)
         const stories =
             getStoriesData(shortList)
+
             // f.map(shortList, id =>
             //     fetch(`${c.STORY + id}.json`)
             //         .then(response => response.json()))
+
         // Using Promise.all to avoid race condition
         const result = await Promise.all(stories)
-
-        return result
-}
-
-// Can getStoriesData be used in fetchTopStories?
-export const getStoriesData = (items) => {
-    const result = f.map(items, id =>
-        fetch(`${c.STORY + id}.json`)
-            .then(response => response.json())
-    )
     return result
-
 }
 
-// export const fetchTopStories = () => {
-//     fetch(`${c.TOP_STORIES + c.PRETTY}`)
-//         .then(data => data.json())
-//         .then(stories => {
-//             f.map(stories, storyId => {
-//                 fetch(`${c.STORY + storyId}`)
-//                     .then(storiesData => storiesData.json())
-//             })
-//         })
-// }
+
+
+
+// This is used to fetch stories details
+export const getStoriesData = (items) =>
+    f.map(items, id =>
+        fetch(`${c.STORY + id}.json`)
+            .then(response => response.json()))
