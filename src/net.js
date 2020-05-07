@@ -1,11 +1,11 @@
-import axios from 'axios'
+import * as api from 'axios'
 import * as f from 'fpx'
 
 import * as c from './const'
 import * as u from './utils'
 // export const getStories = async () => {
 //     const result =
-//         await axios
+//         await api
 //             // Getting New Stories
 //             .get(c.NEW_STORIES)
 //             // Once data is fetched, return it
@@ -16,7 +16,7 @@ import * as u from './utils'
 //
 // export const getStoriesFields = async () => {
 //     const result =
-//         await axios
+//         await api
 //             // Getting New Stories
 //             .get(c.NEW_STORIES)
 //             // Once data is fetched, return it
@@ -27,7 +27,7 @@ import * as u from './utils'
 
 // export const getStory = async (storyId) => {
 //     const result =
-//         await axios
+//         await api
 //             .get(`${c.STORY + storyId}.json`)
 //             .then(({data}) => data)
 //
@@ -45,9 +45,10 @@ export const fetchTopStories = async () => {
         // Displaying only 100 stories
         const shortList = f.slice(data, 0, 15)
         const stories =
-            f.map(shortList, id =>
-                fetch(`${c.STORY + id}.json`)
-                    .then(response => response.json()))
+            getStoriesData(shortList)
+            // f.map(shortList, id =>
+            //     fetch(`${c.STORY + id}.json`)
+            //         .then(response => response.json()))
         // Using Promise.all to avoid race condition
         const result = await Promise.all(stories)
 
@@ -56,10 +57,12 @@ export const fetchTopStories = async () => {
 
 // Can getStoriesData be used in fetchTopStories?
 export const getStoriesData = (items) => {
-    f.map(items, id =>
+    const result = f.map(items, id =>
         fetch(`${c.STORY + id}.json`)
             .then(response => response.json())
     )
+    return result
+
 }
 
 // export const fetchTopStories = () => {
