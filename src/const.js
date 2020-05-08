@@ -10,6 +10,10 @@ export const PRETTY = '?print=pretty'
 
 export const MAX_STORIES = 15
 
+export const PAGINATION = {
+    defaultPageSize: 5
+}
+
 export const COLUMNS = [
     {
         title: 'Author',
