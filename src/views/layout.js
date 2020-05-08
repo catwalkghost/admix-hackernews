@@ -15,7 +15,7 @@ import * as ov from './overview'
 
 export const Layout = () => {
     // Deconstruction assignment for antd Layout components
-    const { Content, Header, Sider } = ant.Layout
+    const { Content, Sider } = ant.Layout
 
     return (
         <r.BrowserRouter>
@@ -24,24 +24,31 @@ export const Layout = () => {
                     <sb.Sidebar />
                 </Sider>
                 <Content style={{ height: '100vh'}}>
-                    <ant.Space direction='vertical' align='center' style={{ width: '100%'}}>
-                        {/*<ant.Alert*/}
-                        {/*    message={`Welcome back ${c.USERNAME}`}*/}
-                        {/*    description={c.ALERT_TEXT}*/}
-                        {/*    closeable*/}
-                        {/*    closeText={c.HIDE_ALERT}*/}
-                        {/*    showIcon*/}
-                        {/*    icon={<s.WelcomeIcon />}>*/}
-                        {/*</ant.Alert>*/}
-                        <ov.Overview />
-                    </ant.Space>
-                    <ant.Space
-                        style={{ width: '100%', justifyContent: 'flex-end'}}
-                        direction='vertical'
-                        align='center'
-                        size='large'>
-                        <st.StoriesTable/>
-                    </ant.Space>
+                    <ant.Row align='center' style={{ width: '100%'}}>
+                        <ant.Col span={18}>
+                            <ant.Alert
+                                    message={`Welcome back ${c.USERNAME}`}
+                                    description={c.ALERT_TEXT}
+                                    closeable
+                                    closeText={c.HIDE_ALERT}
+                                    showIcon
+                                    icon={<s.WelcomeIcon />}>
+                                </ant.Alert>
+                        </ant.Col>
+                    </ant.Row>
+
+                    <ant.Row align='center' style={{ width: '100%'}}>
+                        <ant.Col span={18}>
+                            <ov.Overview />
+                        </ant.Col>
+                    </ant.Row>
+
+                    <ant.Row align='center' style={{ width: '100%'}}>
+                        <ant.Col span={22}>
+                            <st.StoriesTable/>
+                        </ant.Col>
+                    </ant.Row>
+
                 </Content>
             </ant.Layout>
         </r.BrowserRouter>

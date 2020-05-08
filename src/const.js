@@ -58,17 +58,17 @@ export const COLUMNS = [
     {
         title: 'Author',
         dataIndex: 'by',
-        key: 'by'
+        key: 'by',
     },
     {
         title: 'Score',
         dataIndex: 'score',
-        key: 'score'
+        key: 'score',
     },
     {
         title: 'Title',
         dataIndex: 'title',
-        key: 'title'
+        key: 'title',
     },
     {
         title: 'Time',
