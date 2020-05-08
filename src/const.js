@@ -13,6 +13,7 @@ export const PRETTY = '?print=pretty'
 export const MAX_STORIES = 15
 
 // Hardcoded mock-up data
+export const TITLE = 'Admix HackerNews Reader'
 export const USERNAME = 'Gregory'
 export const ALERT_TEXT = 'Nodolor sit amet, consectetur adipisicing elit. Aperiam odio expedita nostrum eius, sapiente commodi in tenetur facilis'
 export const HIDE_ALERT = 'Hide Alert'

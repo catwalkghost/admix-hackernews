@@ -10,6 +10,7 @@ import * as c from '../const'
 import * as sb from './sidebar'
 import * as st from './stories-table'
 import * as ov from './overview'
+import * as wa from './welcome'
 
 export const Layout = () => {
     // Deconstruction assignment for antd Layout components
@@ -24,16 +25,10 @@ export const Layout = () => {
                 <Content style={{ height: '100vh'}}>
                     <ant.Row align='center' style={{ width: '100%'}}>
                         <ant.Col span={18}>
-                            <ant.Alert
-                                    message={`Welcome back ${c.USERNAME}`}
-                                    description={c.ALERT_TEXT}
-                                    closeable
-                                    closeText={c.HIDE_ALERT}
-                                    showIcon
-                                    icon={<s.WelcomeIcon />}>
-                                </ant.Alert>
+                            <wa.Welcome />
                         </ant.Col>
                     </ant.Row>
+                    <div className='main-content-container' >
 
                     <ant.Row align='center' style={{ width: '100%'}}>
                         <ant.Col span={18}>
@@ -46,7 +41,7 @@ export const Layout = () => {
                             <st.StoriesTable/>
                         </ant.Col>
                     </ant.Row>
-
+                    </div>
                 </Content>
             </ant.Layout>
         </r.BrowserRouter>

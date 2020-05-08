@@ -41,14 +41,14 @@ export const OverviewItem = ({title, value, changePercent, id}) => {
             icon = <i.DashboardOutlined />
             break
         case 4:
-            icon = <iAppstoreOutlined />
+            icon = <i.AppstoreOutlined />
             break
         default:
             icon = <i.QuestionCircleOutlined />
     }
 
     return (
-        <ant.Space direction='horizontal' align='start'>
+        <ant.Space direction='horizontal' align='start' className='overview-item-card'>
             <ant.Space align='center' style={{ width: '100%', height: '100%'}}>
                 {icon}
             </ant.Space>
