@@ -9,25 +9,15 @@ import * as u from '../utils'
 import * as c from '../const'
 import * as r from 'react-router-dom'
 
-
 export const StoriesTable = () => {
     return (
-        // <r.BrowserRouter>
-        //     <r.Switch>
-                <>
-                <r.Route exact path='/' component={NewStories} />
-                <r.Route exact path='/recent-stories' component={NewStories} />
-                <r.Route exact path='/top-stories' component={TopStories} />
-                </>
-            // </r.Switch>
-        // </r.BrowserRouter>
-        // <TopStories />
+        <>
+            <r.Route exact path='/' component={NewStories} />
+            <r.Route exact path='/recent-stories' component={NewStories} />
+            <r.Route exact path='/top-stories' component={TopStories} />
+        </>
         )
 }
-
-
-
-
 
 const TopStories = () => {
     // Stories come as an array. Setting an empty array

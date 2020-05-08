@@ -1,4 +1,3 @@
-import * as api from 'axios'
 import * as f from 'fpx'
 
 import * as c from './const'
@@ -71,10 +70,6 @@ export const fetchNewStories = async () => {
     const shortList = u.maxStories(data)
     const stories =
         getStoriesData(shortList)
-
-    // f.map(shortList, id =>
-    //     fetch(`${c.STORY + id}.json`)
-    //         .then(response => response.json()))
 
     // Using Promise.all to avoid race condition
     const result = await Promise.all(stories)

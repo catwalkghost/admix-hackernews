@@ -7,37 +7,49 @@ import * as f from 'fpx'
 
 import * as ant from 'antd'
 
-import * as sb from './sidebar'
-
-import * as n from '../net'
-import * as u from '../utils'
+import * as s from './svg'
 import * as c from '../const'
-
+import * as sb from './sidebar'
 import * as st from './stories-table'
+import * as ov from './overview'
 
 export const Layout = () => {
-    // Deconstruction assignment
-    const { Sider, Content } = ant.Layout
+    // Deconstruction assignment for antd Layout components
+    const { Content, Header, Sider } = ant.Layout
 
     return (
-            <r.BrowserRouter>
+        <r.BrowserRouter>
             <ant.Layout>
                 <Sider width='5%' theme='light'>
                     <sb.Sidebar />
                 </Sider>
                 <Content style={{ height: '100vh'}}>
+                    <ant.Space direction='vertical' align='center' style={{ width: '100%'}}>
+                        {/*<ant.Alert*/}
+                        {/*    message={`Welcome back ${c.USERNAME}`}*/}
+                        {/*    description={c.ALERT_TEXT}*/}
+                        {/*    closeable*/}
+                        {/*    closeText={c.HIDE_ALERT}*/}
+                        {/*    showIcon*/}
+                        {/*    icon={<s.WelcomeIcon />}>*/}
+                        {/*</ant.Alert>*/}
+                        <ov.Overview />
+                    </ant.Space>
                     <ant.Space
-                        style={{ height: '100vh', justifyContent: 'flex-end'}}
+                        style={{ width: '100%', justifyContent: 'flex-end'}}
                         direction='vertical'
-                        align='end'
+                        align='center'
                         size='large'>
                         <st.StoriesTable/>
                     </ant.Space>
                 </Content>
             </ant.Layout>
-            </r.BrowserRouter>
+        </r.BrowserRouter>
         )
 }
+
+
+
 
 
 
