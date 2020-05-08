@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 
-import 'antd/dist/antd.css'
 import * as ant from 'antd'
 import * as f from 'fpx'
 

@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import * as r from 'react-router-dom'
 
-import 'antd/dist/antd.css'
-
 import * as f from 'fpx'
 
 import * as ant from 'antd'

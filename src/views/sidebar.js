@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import * as r from 'react-router-dom'
 
-import 'antd/dist/antd.css'
 import * as ant from 'antd'
 
 import * as i from '@ant-design/icons';
