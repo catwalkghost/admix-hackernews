@@ -48,16 +48,21 @@ export const OverviewItem = ({title, value, changePercent, id}) => {
     }
 
     return (
-        <ant.Space direction='horizontal' align='start' className='overview-item-card'>
-            <ant.Space align='center' style={{ width: '100%', height: '100%'}}>
-                {icon}
-            </ant.Space>
-            <ant.Space>
-                <ant.Statistic title={title} value={value} style={{ display: 'flex', flexDirection: 'column-reverse '}}/>
-            </ant.Space>
-            <ant.Space>
+        <ant.Row className='overview-item-card'>
+            <ant.Col span={6}>
+                <div className='overview-icon-container'>
+                    {icon}
+                </div>
+            </ant.Col>
+            <ant.Col span={6}>
+                <ant.Statistic title={title} value={value}/>
+            </ant.Col>
+            <ant.Col span={8}>
                 <ant.Statistic value={changePercent} suffix='%' prefix={<i.ArrowUpOutlined />}/>
-            </ant.Space>
-        </ant.Space>
+            </ant.Col>
+            <ant.Col span={4}>
+                &nbsp;
+            </ant.Col>
+        </ant.Row>
     )
 }

@@ -31,6 +31,7 @@ const TopStories = () => {
 
     return (
         <ant.Table
+            rowKey={story => story.id}
             dataSource={stories}
             columns={c.COLUMNS}
             pagination={c.PAGINATION}/>
@@ -50,6 +51,7 @@ const NewStories = () => {
 
     return (
         <ant.Table
+            rowKey={story => story.id}
             dataSource={stories}
             columns={c.COLUMNS}
             pagination={c.PAGINATION}/>

@@ -2,6 +2,7 @@
 @fill-color-dark: #222222;
 @accent-color: #00ffff;
 @secondary-color: #4285f4;
+@true-white: #ffffff;
 
 
 // Atomic classes for text colour
@@ -23,5 +24,53 @@
 
 .fg-accent {
   color: @accent-color;
+}
+
+// Atomic classes for background
+.bg-primary {
+  background-color: @primary-color;
+}
+
+.bg-secondary {
+  background-color: @secondary-color;
+}
+
+.bg-black {
+  background-color: @fill-color-dark;
+}
+
+.bg-white {
+  background-color: @fill-color-light;
+}
+
+.bg-true-white {
+  background-color: @true-white;
+}
+
+.bg-accent {
+  background-color: @accent-color;
+}
+
+// Atomic class for soft box shadow
+.box-shadow-smooth {
+  box-shadow: 0 2.8px 2.2px rgba(2, 2, 2, .034),
+  0 6.7px 5.3px rgba(2, 2, 2, .048),
+  0 12.5px 10px rgba(2, 2, 2, .06),
+  0 22.3px 17.9px rgba(2, 2, 2, .072),
+  0 41.8px 33.4px rgba(2, 2, 2, .086),
+  0 100px 80px rgba(2, 2, 2, .12);
+}
+
+// Atomic classes for border radius
+.rounded-1x {
+  border-radius: @border-radius-base;
+}
+
+.rounded-2x {
+  border-radius: calc(@border-radius-base * 2);
+}
+
+.rounded-4x {
+  border-radius: calc(@border-radius-base * 4);
 }
 
