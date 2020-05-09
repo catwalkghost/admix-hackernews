@@ -15,43 +15,39 @@ import * as c from '../const'
 export const Sidebar = () => {
     const { Text } = ant.Typography
     return (
-            <ant.Space
-                direction='vertical'
-                align='center'
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    justifyContent: 'space-between'}}>
+            <div className='sidebar-container'>
                 <ant.Space
                     direction='vertical'
                     align='center'
                     className='width-100p fg-primary'>
-                    <s.LogoBold
-                        style={{ width: '25px', height: '25px'}}
-                    />
-
-                    <r.NavLink to='/top-stories'>
-                        <ant.Space direction='vertical' align='center'>
-                            <i.AlignLeftOutlined />
-                            <Text align='center'>Top Stories</Text>
-                        </ant.Space>
+                    <r.NavLink to='/' className='sidebar-logo-container'>
+                        <s.LogoBold className='sidebar-logo' />
                     </r.NavLink>
 
-                    <r.NavLink to='/recent-stories'>
-                        <ant.Space direction='vertical' align='center'>
-                            <i.AreaChartOutlined />
-                            <Text align='center'>Most Recent</Text>
-                        </ant.Space>
+                    <r.NavLink
+                        className='sidebar-link'
+                        activeClassName='sidebar-link-active'
+                        to='/top-stories'>
+                            <i.AlignLeftOutlined className='sidebar-icon'/>
+                            <Text align='center' className='sidebar-icon-text'>Top Stories</Text>
+                    </r.NavLink>
+
+                    <r.NavLink
+                        className='sidebar-link'
+                        activeClassName='sidebar-link-active'
+                        to='/recent-stories'>
+                            <i.AreaChartOutlined className='sidebar-icon'/>
+                            <Text align='center' className='sidebar-icon-text'>Most Recent</Text>
                     </r.NavLink>
 
                 </ant.Space>
-                <ant.Space>
-                    <ant.Space direction='vertical' align='center'>
-                        <i.LogoutOutlined />
-                        <Text align='center'>Log Out</Text>
-                    </ant.Space>
-                </ant.Space>
-            </ant.Space>
+                <div>
+                    <div className='sidebar-link'>
+                        <i.LogoutOutlined className='sidebar-icon fg-primary'/>
+                        <Text align='center' className='sidebar-icon-text'>Log Out</Text>
+                    </div>
+                </div>
+            </div>
     )
 }
 

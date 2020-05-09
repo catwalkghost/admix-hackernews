@@ -45,7 +45,7 @@ const NewStories = () => {
     React.useEffect(() => {
         n.fetchNewStories()
             // Resolving the promise and populating stories
-            .then(topStories => setStories(topStories))
+            .then(newStories => setStories(newStories))
             .catch(err => console.log(`Error: ${err}`))
     }, []);
 

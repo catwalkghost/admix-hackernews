@@ -34,7 +34,7 @@ import * as u from './utils'
 // }
 
 export const fetchTopStories = async () => {
-        const response = await fetch(`${c.TOP_STORIES + c.PRETTY}`)
+        const response = await fetch(`${c.TOP_STORIES }`)
 
         if (response.ok === false) {
             throw new Error(`Error: ${response.text}`)
@@ -57,16 +57,12 @@ export const fetchTopStories = async () => {
 }
 
 export const fetchNewStories = async () => {
-    // Using a standard fetch() with error handling instead of axios
     const response = await fetch(`${c.NEW_STORIES + c.PRETTY}`)
 
     if (response.ok === false) {
         throw new Error(`Error: ${response.text}`)
     }
-    // json() method returns a promise
     const data = await response.json()
-    // Displaying only 15 stories as shown in mock-up
-    // const shortList = f.slice(data, 0, c.MAX_STORIES)
     const shortList = u.maxStories(data)
     const stories =
         getStoriesData(shortList)

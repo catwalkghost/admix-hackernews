@@ -3,11 +3,17 @@
 @accent-color: #00ffff;
 @secondary-color: #4285f4;
 @true-white: #ffffff;
+@primary-darker: #0d0b80;
+@light-grey: #d9d9d9;
 
 
 // Atomic classes for text colour
 .fg-primary {
   color: @primary-color;
+}
+
+.fg-primary-darker{
+  color: @primary-darker;
 }
 
 .fg-secondary {
@@ -26,9 +32,21 @@
   color: @accent-color;
 }
 
+.fg-success * {
+  color: @success-color;
+}
+
+.fg-error * {
+  color: @error-color;
+}
+
 // Atomic classes for background
 .bg-primary {
   background-color: @primary-color;
+}
+
+.bg-primary-darker {
+  background-color: @primary-darker;
 }
 
 .bg-secondary {
@@ -51,14 +69,18 @@
   background-color: @accent-color;
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 // Atomic class for soft box shadow
 .box-shadow-smooth {
-  box-shadow: 0 2.8px 2.2px rgba(2, 2, 2, .034),
-  0 6.7px 5.3px rgba(2, 2, 2, .048),
-  0 12.5px 10px rgba(2, 2, 2, .06),
-  0 22.3px 17.9px rgba(2, 2, 2, .072),
-  0 41.8px 33.4px rgba(2, 2, 2, .086),
-  0 100px 80px rgba(2, 2, 2, .12);
+  box-shadow:
+          0 3px 2px rgba(2, 2, 2, .02),
+          0 6px 4px rgba(2, 2, 2, .03),
+          0 12px 8px rgba(2, 2, 2, .04),
+          0 24px 16px rgba(2, 2, 2, .05);
+
 }
 
 // Atomic classes for border radius
@@ -72,5 +94,9 @@
 
 .rounded-4x {
   border-radius: calc(@border-radius-base * 4);
+}
+
+.round {
+  border-radius: 50%;
 }
 

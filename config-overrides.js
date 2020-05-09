@@ -13,9 +13,10 @@ module.exports = override(
             lessOptions: {
                 javascriptEnabled: true,
                 modifyVars: {
-                    '@primary-color': '@', // Primary colour
+                    '@primary-color': '#2A13BD', // Primary colour
                     '@link-color': '#2A13BD', // URL colour
-                    '@success-color' : '#00FFFF', // Success Messages
+                    '@success-color' : '#44C07C', // Success Messages
+                    '@error-color' : '#f44A6F', //Error Messages
                     '@font-size-base' : '16px', // Defaulting this to a standard value
                     '@border-radius-base' : '4px',
                     '@text-color': 'rgba(2, 2, 2, 1)',

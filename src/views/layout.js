@@ -22,25 +22,26 @@ export const Layout = () => {
                 <Sider width='5%' theme='light'>
                     <sb.Sidebar />
                 </Sider>
-                <Content style={{ height: '100vh'}}>
-                    <ant.Row align='center' style={{ width: '100%'}}>
-                        <ant.Col span={18}>
+                <Content className='height-100'>
+                    <ant.Row align='center' className='width-100p'>
+                        <ant.Col span={20}>
                             <wa.Welcome />
                         </ant.Col>
                     </ant.Row>
                     <div className='main-content-container' >
 
-                    <ant.Row align='center' style={{ width: '100%'}}>
-                        <ant.Col span={18}>
+                    <ant.Row align='center' className='overview-container'>
+                        <ant.Col span={20}>
                             <ov.Overview />
                         </ant.Col>
                     </ant.Row>
 
-                    <ant.Row align='center' style={{ width: '100%'}}>
-                        <ant.Col span={22}>
+                    <ant.Row align='center' className='stories-container'>
+                        <ant.Col span={24}>
                             <st.StoriesTable/>
                         </ant.Col>
                     </ant.Row>
+
                     </div>
                 </Content>
             </ant.Layout>
