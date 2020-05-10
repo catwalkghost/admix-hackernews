@@ -1,12 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import * as r from 'react-router-dom'
-
-import * as f from 'fpx'
 
 import * as ant from 'antd'
 
-import * as s from './svg'
-import * as c from '../const'
 import * as sb from './sidebar'
 import * as st from './stories-table'
 import * as ov from './overview'
