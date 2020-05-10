@@ -81,7 +81,7 @@ export const OverviewItem = ({title, value, changePercent, id}) => {
                     </ant.Col>
                 </ant.Row>
 
-                <ant.Row>
+                <ant.Row className='overview-item-stats-title-container'>
                     <ant.Col span={24}>
                         <Text className='overview-item-stats-title'>{title}</Text>
                     </ant.Col>

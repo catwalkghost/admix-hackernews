@@ -1,3 +1,6 @@
+// TODO: The file is too long and mixes different styles of writing
+// Needs refactoring
+
 // Sizes
 .width-100p {
   width: 100%;
@@ -208,6 +211,10 @@
   &:extend(.text-uppercase-narrow);
   &:extend(.font-small);
   opacity: .4;
+
+  &-container {
+    margin-top: -.5rem;
+  }
 }
 
 .overview-item-main-stat {
@@ -221,7 +228,7 @@
   &:extend(.rounded-2x);
   &:extend(.full-size);
 
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -336,7 +343,7 @@
 
   padding: 2rem .5rem;
 
-  border-left: 2px solid @light-grey;
+  border-right: 1px solid @lighter-grey;
   }
 
 
