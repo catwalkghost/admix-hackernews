@@ -25,8 +25,6 @@ export const selectFields = ({by, score, title, time, kids, url} = {}) => ({
     url,
 })
 
-//
-
 // Convert UNIX timestamp to a human-readable format
 export const convertTimestamp = timestamp => {
     const seconds = Math.floor((new Date() - timestamp * 1000) / 1000)

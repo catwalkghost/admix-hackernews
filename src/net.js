@@ -2,36 +2,6 @@ import * as f from 'fpx'
 
 import * as c from './const'
 import * as u from './utils'
-// export const getStories = async () => {
-//     const result =
-//         await api
-//             // Getting New Stories
-//             .get(c.NEW_STORIES)
-//             // Once data is fetched, return it
-//             .then(({data}) => f.isObject(data) && data)
-//
-//     return result
-// }
-//
-// export const getStoriesFields = async () => {
-//     const result =
-//         await api
-//             // Getting New Stories
-//             .get(c.NEW_STORIES)
-//             // Once data is fetched, return it
-//             .then(({data}) => f.isObject(data) && u.selectFields(data))
-//
-//     return result
-// }
-
-// export const getStory = async (storyId) => {
-//     const result =
-//         await api
-//             .get(`${c.STORY + storyId}.json`)
-//             .then(({data}) => data)
-//
-//     return result
-// }
 
 export const fetchTopStories = async () => {
         const response = await fetch(`${c.TOP_STORIES }`)

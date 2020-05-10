@@ -5,7 +5,6 @@ import * as i from '@ant-design/icons'
 import * as f from 'fpx'
 
 import * as c from '../const'
-import * as u from '../utils'
 
 export const Overview = () => {
     const {data} = c.OVERVIEW
@@ -42,7 +41,7 @@ export const OverviewItem = ({title, value, changePercent, id}) => {
         case 1:
             icon = <i.StockOutlined />
             positive = true
-            cls = 'bg-accent'
+            cls = 'bg-accent-darker'
             break
         case 2:
             icon = <i.ThunderboltOutlined />
@@ -76,7 +75,7 @@ export const OverviewItem = ({title, value, changePercent, id}) => {
                 <ant.Row gutter={4} className='overview-item-stats'>
                     <ant.Col span={24}>
                         <ant.Space direction='horizontal' size={4} align='center'>
-                            <ant.Statistic value={value}/>
+                            <ant.Statistic className='overview-item-main-stat' value={value}/>
                             <ant.Statistic className={`${positive ? 'fg-success' : 'fg-error'} overview-item-stats-extra`} value={changePercent} suffix='%' prefix={<i.ArrowUpOutlined />}/>
                         </ant.Space>
                     </ant.Col>
@@ -105,7 +104,7 @@ export const OverviewHeader = () => {
     return (
         <ant.Row className='width-100p overview-header'>
             <ant.Col span={18}>
-                <Title className='fg-black'>
+                <Title className='overview-header-title' level={3}>
                     {c.PAGE_TITLE}
                 </Title>
             </ant.Col>
@@ -146,7 +145,7 @@ export const OverviewFooter = () => {
     return (
         <ant.Row className='width-100p overview-footer'>
             <ant.Col span={24} align='center'>
-                <button className='overview-expand-button z-index-100'>
+                <button className='overview-expand-button z-index-100 fg-light-grey'>
                     <i.DownOutlined className='z-index-100'/>
                 </button>
                 <div className="overview-divider transparent-block half-circle-down" />

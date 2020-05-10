@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react'
 
 import * as ant from 'antd'
-import * as f from 'fpx'
 
 import * as n from '../net'
-import * as u from '../utils'
 import * as c from '../const'
 import * as r from 'react-router-dom'
 
@@ -22,7 +20,7 @@ const TopStories = () => {
     // Stories come as an array. Setting an empty array
     const [stories, setStories] = useState([] )
 
-    React.useEffect(() => {
+    useEffect(() => {
         n.fetchTopStories()
             // Resolving the promise and populating stories
             .then(topStories => setStories(topStories))
@@ -42,7 +40,7 @@ const NewStories = () => {
     // Stories come as an array. Setting an empty array
     const [stories, setStories] = useState([] )
 
-    React.useEffect(() => {
+    useEffect(() => {
         n.fetchNewStories()
             // Resolving the promise and populating stories
             .then(newStories => setStories(newStories))

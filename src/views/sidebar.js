@@ -1,16 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import * as r from 'react-router-dom'
 
 import * as ant from 'antd'
 
 import * as i from '@ant-design/icons';
-import * as f from 'fpx'
 
 import * as s from './svg'
-import * as n from '../net'
-import * as u from '../utils'
-import * as c from '../const'
-
 
 export const Sidebar = () => {
     const { Text } = ant.Typography

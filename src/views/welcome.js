@@ -13,13 +13,13 @@ export const Welcome = () => {
     return (
         <>
             {!show ? null : (
-                <ant.Row className='welcome-alert width-100p fg-white'>
+                <ant.Row className='welcome-alert'>
                     <ant.Col span={6}>
                         <s.WelcomeIcon className='welcome-alert-icon' />
                     </ant.Col>
                     <ant.Col span={12}>
                         <Title level={2} className='welcome-alert-title'>Welcome back <Text className='fg-white font-weight-600'>{c.USERNAME}</Text></Title>
-                        <Paragraph className='fg-white'>{c.ALERT_TEXT}</Paragraph>
+                        <Paragraph className='welcome-alert-text'>{c.ALERT_TEXT}</Paragraph>
                     </ant.Col>
                     <ant.Col span={6} align='center'>
                         <ant.Button

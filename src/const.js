@@ -106,12 +106,14 @@ export const COLUMNS = [
         title: 'Comments Count',
         dataIndex: 'kids',
         key: 'kids',
+        width: 180,
         render: comments => f.isList(comments) ? f.size(comments) : 0
     },
     {
         title: 'Time',
         dataIndex: 'time',
         key: 'time',
+        width: 100,
         render: time => f.isNumber(time) ? u.convertTimestamp(time) : 'n/a',
     },
     {
